@@ -1,0 +1,19 @@
+<h2>Add a new comment</h2>
+
+<form action="{% url 'blog:post_comment' post.id %}" method="post">
+    {{form.as_p}}
+    {% csrf_token %}
+    <p>
+        <input type="submit" value="Add a comment">
+    </p>
+</form>
+
+{% comment %}
+Defination 1:
+    The "action" attribute defines the action to be performed when the form is submitted.
+    Usually, the form data is sent to a file on the server when the user click on the submit button.
+
+Defination 2:
+    The "action" attribute tells HTML where the form data will be sent when form will be submitted.   
+
+{% endcomment %}
